@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Hvor lang tid fløj du?</p>
+    <input type="text" id="tid" />
+    <button>Klik og beregn arealet, kik i konsollen.</button>
+
+    <script>
+      document.querySelector("button").addEventListener("click", buttonClicked);
+      function buttonClicked() {
+        let tid = document.querySelector("#tid").value;
+        let co2UdledtIKgVedFlyrejse = tid * 109;
+        let res = co(tid, co2UdledtIKgVedFlyrejse);
+
+        let resultat = `Ved ${tid} timers flyrejse har du udledt ${co2UdledtIKgVedFlyrejse}kg CO2`;
+
+        if (isNaN(res)) {
+          resultat = "Det er ikke et tal prøv igen";
+        } else {
+          resultat = `Ved ${tid} timers flyrejse har du udledt ${co2UdledtIKgVedFlyrejse}kg CO2`;
+        }
+        console.log(resultat);
+      }
+
+      function co(l, b) {
+        return l * b;
+      }
+    </script>
+  </body>
+</html>
