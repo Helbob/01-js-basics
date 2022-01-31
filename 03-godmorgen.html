@@ -12,9 +12,9 @@
       let tid = nyDato.getHours();
       if (tid > 5 && tid <= 10) {
         console.log("Godmorgen");
-      } else if (tid > 10 && tid <= 18) {
+      } else if (tid <= 18) {
         console.log("Goddag");
-      } else if (tid > 18 && tid <= 0) {
+      } else if (tid <= 0) {
         console.log("Godaften");
       } else {
         console.log("Godnat");
