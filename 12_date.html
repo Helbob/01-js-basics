@@ -22,24 +22,27 @@
       document.querySelector("button").addEventListener("click", buttonClicked);
 
       function buttonClicked() {
-        let ok = dig / 2 + 7;
-        let okDate = date / 2 + 7;
+        let okMin = dig / 2 + 7;
+        let okMax = (dig - 7) * 2;
 
-        if (date == ok) {
+        let okDateMin = date / 2 + 7;
+        let okDateMax = (date - 7) * 2;
+
+        if (date <= okMax && date >= okMin) {
           console.log(
             `Da din date er ${date} år gammel er det okay for jer at date.`
           );
-        } else if (date > ok) {
+        } else if (date > okMax) {
           console.log("Du burde date en der er yngre.");
         } else {
           console.log("Du burde date en der er ældre.");
         }
 
-        if (okDate == ok) {
+        if (dig <= okDateMax && dig >= okDateMin) {
           console.log(
             `Da din date er ${dig} år gammel er det okay for jer at date.`
           );
-        } else if (date > ok) {
+        } else if (dig > okDateMax) {
           console.log("Din date burde date en der er yngre.");
         } else {
           console.log("Din date burde date en der er ældre.");
