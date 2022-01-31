@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Date Rådgivning</h1>
+    <label for="">Indtast din alder</label>
+    <input type="text" id="dinAlder" />
+    <br />
+    <label for="">Indtast din dates alder</label>
+    <input type="text" id="dateAlder" />
+
+    <button>Klik her</button>
+    <script>
+      let dig = document.querySelector("#dinAlder").value;
+      let date = document.querySelector("#dateAlder").value;
+
+      document.querySelector("button").addEventListener("click", buttonClicked);
+
+      function buttonClicked() {
+        let ok = dig / 2 + 7;
+        let okDate = date / 2 + 7;
+
+        if (date == ok) {
+          console.log(
+            `Da din date er ${date} år gammel er det okay for jer at date.`
+          );
+        } else if (date > ok) {
+          console.log("Du burde date en der er yngre.");
+        } else {
+          console.log("Du burde date en der er ældre.");
+        }
+
+        if (okDate == ok) {
+          console.log(
+            `Da din date er ${dig} år gammel er det okay for jer at date.`
+          );
+        } else if (date > ok) {
+          console.log("Din date burde date en der er yngre.");
+        } else {
+          console.log("Din date burde date en der er ældre.");
+        }
+      }
+
+      if (dig <= 15) {
+        console.log("Du må ikke gøre brug af dette site.");
+      }
+
+      if (date <= 15) {
+        console.log("Du må ikke gøre brug af dette site.");
+      }
+    </script>
+  </body>
+</html>

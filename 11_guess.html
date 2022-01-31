@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Indtast et tal mellem 0 og 20 og se om du kan gætte tallet!</h1>
+    <input type="text" id="gætFælt" />
+    <button>Gæt!</button>
+    <script>
+      let tal = Math.floor(Math.random() * 20);
+      let gæt = 1;
+      document.querySelector("button").addEventListener("click", buttonClicked);
+
+      function buttonClicked() {
+        let fælt = document.getElementById("gætFælt").value;
+
+        if (fælt == tal) {
+          console.log(`Tillykke du fik det rigtigt. Det tog dig ${gæt} gæt!`);
+        } else if (fælt > tal) {
+          gæt++;
+          console.log("Desværre ikke korrekt. Prøv et lavere nummer.");
+        } else {
+          gæt++;
+          console.log("Desværre ikke korrekt. Prøv et højere nummer.");
+        }
+      }
+    </script>
+  </body>
+</html>
